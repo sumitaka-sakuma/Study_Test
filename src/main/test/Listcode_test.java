@@ -19,4 +19,11 @@ public class Listcode_test {
 		List<String> actual = sut.getList();
 		assertThat(actual, hasItems("Hello"));
 	}
+
+	@Test
+	public void getListIsNull(){
+		Listcode sut = new Listcode();
+		List<String> actual = sut.getNullList();
+		assertTrue(actual.isEmpty());
+	}
 }

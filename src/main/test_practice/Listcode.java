@@ -14,4 +14,10 @@ public class Listcode {
 
 		return stringList;
 	}
+
+	public List<String> getNullList(){
+
+		List<String> stringList = new ArrayList<>();
+		return stringList;
+	}
 }

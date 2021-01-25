@@ -14,7 +14,7 @@ public class IsDate extends BaseMatcher<Date>{
 	private final int dd;
 	Object actual;
 
-	IsDate (int yyyy, int mm, int dd) {
+	public IsDate (int yyyy, int mm, int dd) {
 		this.yyyy = yyyy;
 		this.mm = mm;
 		this.dd = dd;

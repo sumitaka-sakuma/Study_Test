@@ -15,7 +15,14 @@ public class isDate_test {
 	public void isTodayTest(){
 
 		IsDate sut = new IsDate(2021, 1, 22);
-		assertThat(new Date(), is(sut.dateOf(2021, 1, 22)));
+		assertThat(new Date(), is(sut.dateOf(2021, 1, 25)));
 
+	}
+
+	@Test
+	public void isNotTodayTest(){
+
+		IsDate sut = new IsDate(2021, 1, 22);
+		assertFalse(is(sut.dateOf(2021, 1, 22)) == new Date());
 	}
 }

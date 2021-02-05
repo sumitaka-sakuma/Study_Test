@@ -20,7 +20,6 @@ public class RegisterCheckTest {
 		private static boolean isRegisterMailMagazine;
 		private static int userPastMonth;
 
-
 		@Before
 		public void setUp () {
 			rc = new RegisterCheck();
@@ -30,14 +29,33 @@ public class RegisterCheckTest {
 		}
 
 		@Test
-		public void SpecialMemberSuccess () {
+		public void specialMemberSuccess () {
 
 			boolean actual = rc.isSpecialMember(age, isRegisterMailMagazine, userPastMonth);
 			assertTrue(actual);
 		}
 	}
 
-	public static class isNotSpecialMember {
+	public static class isNotSpecialMemberAge {
 
+		private static RegisterCheck rc;
+		private static int age ;
+		private static boolean isRegisterMailMagazine;
+		private static int userPastMonth;
+
+		@Before
+		public void setUp () {
+			rc = new RegisterCheck();
+			age = 19;
+			isRegisterMailMagazine = true;
+			userPastMonth = 1;
+		}
+
+		@Test
+		public void specialMemberFalse () {
+
+			boolean actual = rc.isSpecialMember(age, isRegisterMailMagazine, userPastMonth);
+			assertFalse(actual);
+		}
 	}
 }

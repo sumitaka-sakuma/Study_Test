@@ -9,7 +9,6 @@ public class RegisterCheck {
 		int userPastMonth = 0;
 
 		isSpecialMember(age, isRegisterMailMagazine, userPastMonth);
-
 	}
 
 	public static boolean isSpecialMember(int age, boolean isRegisterMailMagazine, int userPastMonth) {
@@ -25,8 +24,6 @@ public class RegisterCheck {
 		if (userPastMonth < 1) {
 			return false;
 		}
-
 		return true;
 	}
-
 }

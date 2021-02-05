@@ -58,4 +58,50 @@ public class RegisterCheckTest {
 			assertFalse(actual);
 		}
 	}
+
+	public static class isNotSpecialMemberRegister {
+
+		private static RegisterCheck rc;
+		private static int age ;
+		private static boolean isRegisterMailMagazine;
+		private static int userPastMonth;
+
+		@Before
+		public void setUp () {
+			rc = new RegisterCheck();
+			age = 20;
+			isRegisterMailMagazine = false;
+			userPastMonth = 1;
+		}
+
+		@Test
+		public void specialMemberFalse () {
+
+			boolean actual = rc.isSpecialMember(age, isRegisterMailMagazine, userPastMonth);
+			assertFalse(actual);
+		}
+	}
+
+	public static class isNotSpecialMemberUserPostMonth {
+
+		private static RegisterCheck rc;
+		private static int age ;
+		private static boolean isRegisterMailMagazine;
+		private static int userPastMonth;
+
+		@Before
+		public void setUp () {
+			rc = new RegisterCheck();
+			age = 20;
+			isRegisterMailMagazine = true;
+			userPastMonth = 0;
+		}
+
+		@Test
+		public void specialMemberFalse () {
+
+			boolean actual = rc.isSpecialMember(age, isRegisterMailMagazine, userPastMonth);
+			assertFalse(actual);
+		}
+	}
 }

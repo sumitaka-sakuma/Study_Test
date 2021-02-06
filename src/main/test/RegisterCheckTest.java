@@ -48,22 +48,31 @@ public class RegisterCheckTest {
 	public static class isNotSpecialMemberAge {
 
 		private static RegisterCheck rc;
-		private static int age ;
+		private static int youngAge;
+		private static int seniorAge;
 		private static boolean isRegisterMailMagazine;
 		private static int userPastMonth;
 
 		@Before
 		public void setUp () {
 			rc = new RegisterCheck();
-			age = 19;
+			youngAge = 19;
+			seniorAge = 150;
 			isRegisterMailMagazine = true;
 			userPastMonth = 1;
 		}
 
 		@Test
-		public void specialMemberFalse () {
+		public void youngSpecialMemberFalse () {
 
-			boolean actual = rc.isSpecialMember(age, isRegisterMailMagazine, userPastMonth);
+			boolean actual = rc.isSpecialMember(youngAge, isRegisterMailMagazine, userPastMonth);
+			assertFalse(actual);
+		}
+
+		@Test
+		public void seniorSpecialMemberFalse () {
+
+			boolean actual = rc.isSpecialMember(seniorAge, isRegisterMailMagazine, userPastMonth);
 			assertFalse(actual);
 		}
 	}

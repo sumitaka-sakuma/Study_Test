@@ -6,19 +6,28 @@ import org.junit.experimental.theories.Theories;
 import org.junit.experimental.theories.Theory;
 import org.junit.runner.RunWith;
 
+import test_practice.Janken;
+import test_practice.Janken.Hand;
+import test_practice.Janken.Result;
+
 @RunWith(Enclosed.class)
 public class JankenTest {
 
 	@RunWith(Theories.class)
 	public static class test {
 
+		private static Janken jan = new Janken();
+
 		@DataPoints
-		public static String[] HAND = {"GU", "TYOKI", "PA"};
-		public static String[] RESULT = {"WIN", "LOSE", "DRAW"};
+		public static Hand[] HAND1 = Hand.values();
+		public static Hand[] HAND2 = Hand.values();
+		public static Result[] RESULT = Result.values();
 
 		@Theory
-		public void testMethod (String HAND, String RESULT) throws Exception{
-			System.out.println(HAND + "/" + RESULT);
+		public void testMethod (Hand HAND1, Hand HAND2) throws Exception{
+
+			Result result = jan.judge(HAND1, HAND2);
 		}
+
 	}
 }

@@ -22,8 +22,8 @@ public class RegisterCheck {
 
 	public static boolean isSpecialMember(int age, boolean isRegisterMailMagazine, int userPastMonth) {
 
-		// 20歳未満は特別会員でない
-		if (age < 20) {
+		// 20歳未満、150歳以上は特別会員でない
+		if ((age < 20) || (150 <= age)) {
 			return false;
 		}
 		// メールマガジンに登録してない場合、特別会員でない
